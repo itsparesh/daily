@@ -1,0 +1,19 @@
+name: Daily Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Run update script
+      run: python update_repo.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
