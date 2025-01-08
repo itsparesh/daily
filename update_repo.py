@@ -6,8 +6,8 @@ def update_file():
     with open(filename, 'w') as file:
         file.write(f"Last updated: {datetime.datetime.now()}")
     
-    os.system('git config --global user.email "your-email@example.com"')
-    os.system('git config --global user.name "Your Name"')
+    os.system('git config --global user.email "master.pareshkrishna@gmail.com"')
+    os.system('git config --global user.name "itsparesh"')
     os.system(f'git add {filename}')
     os.system('git commit -m "Daily update"')
     os.system('git push')
